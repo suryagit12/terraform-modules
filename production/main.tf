@@ -11,7 +11,7 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "sais3bucket236"
+    bucket = "terraform-state-surya"
     key    = "production-modules.tfstate"
     region = "us-east-1"
   }

@@ -17,7 +17,7 @@ resource "aws_lb_target_group" "test" {
 }
 
 resource "aws_lb_target_group_attachment" "test" {
-  count = "${var.environment == "Production" ? 3 : 3}"
+  count = "${var.environment == "Production" ? 2 : 1}"
   target_group_arn = aws_lb_target_group.test.arn
   target_id        = "${element(var.private_servers, count.index)}"
   port             = 80

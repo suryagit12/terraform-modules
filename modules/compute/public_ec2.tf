@@ -13,7 +13,6 @@ resource "aws_instance" "public-servers" {
   }
     user_data = <<-EOF
   	#!/bin/bash
-  	#!/bin/bash
         sudo apt install nginx -y        
         sudo systemctl start nginx
         sudo systemctl enable nginx

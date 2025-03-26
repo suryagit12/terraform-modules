@@ -3,7 +3,7 @@ module "lambda-function" {
    lambda_function_name = "lambda-dev-function"
    lambda_handler = "lambda_function.lambda_handler"
    lambda_runtime = "python3.8"
-   lambda_zip_path = "modules/lambda/lambda_function.zip"
+   lambda_zip_path = "../modules/lambda/lambda_function.zip"
    lambda_exec_role_name = "lambda_exec_role"
    lambda_exec_policy_name = "lambda_exec_policy"
    environment  = module.dev_vpc_1.environment

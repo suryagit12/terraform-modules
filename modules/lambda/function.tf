@@ -1,4 +1,5 @@
 resource "aws_lambda_function" "example_lambda" {
+  depends_on = [aws_s3_bucket.lambda_bucket]
   function_name = var.lambda_function_name
   handler       = var.lambda_handler
   runtime       = var.lambda_runtime

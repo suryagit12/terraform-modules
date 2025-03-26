@@ -12,10 +12,12 @@ resource "aws_instance" "public-servers" {
     environment = "${var.environment}"
   }
     user_data = <<-EOF
-  	#!/bin/bash
-        sudo apt install nginx -y        
-        sudo systemctl start nginx
-        sudo systemctl enable nginx
+      #!/bin/bash
+      sudo apt update -y
+      sudo apt install nginx -y
+      sudo systemctl start nginx
+      sudo systemctl enable nginx 1 
+      echo "<h1>Hello from Terraform!</h1>" | sudo tee /var/www/html/index.html
   EOF
   depends_on = [var.elb_listener_public]
 }

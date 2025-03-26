@@ -16,7 +16,7 @@ resource "aws_iam_role" "lambda_exec_role" {
 resource "aws_iam_policy" "lambda_exec_policy" {
   name        = var.lambda_exec_policy_name
   description = "Policy for Lambda execution"
-
+  depends_on = [aws_s3_bucket.lambda_bucket]
   policy = jsonencode({
     Version = "2012-10-17",
     Statement = [

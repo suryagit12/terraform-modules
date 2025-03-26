@@ -6,7 +6,7 @@ resource "aws_lambda_function" "example_lambda" {
   filename         = var.lambda_zip_path
   #source_code_hash = filebase64sha256(var.lambda_zip_path)
      tags = {
-    Name        = "${var.vpc_name}-Lamada-function}"
+    Name        = "${var.environment}-Lambda-function"
     environment = var.environment
   }
    

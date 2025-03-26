@@ -1,7 +1,9 @@
 resource "aws_s3_bucket" "lambda_bucket" {
   bucket = var.s3_bucket_name
 }
-
+provider "aws" {
+  region = "us-east-1"
+}
 resource "aws_s3_object" "lambda_code" {
   bucket = aws_s3_bucket.lambda_bucket.id
   key    = var.s3_object_key

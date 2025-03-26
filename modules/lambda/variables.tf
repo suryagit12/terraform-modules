@@ -1,7 +1,10 @@
 variable "lambda_function_name" {}
 variable "lambda_handler" {}
 variable "lambda_runtime" {}
-variable "lambda_zip_path" {}
+variable "lambda_zip_path" {
+  description = "Path to the zipped Lambda function"
+  type        = string
+}
 variable "lambda_exec_role_name" {}
 variable "lambda_exec_policy_name" {}
 variable "environment" { }

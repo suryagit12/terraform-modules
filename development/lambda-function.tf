@@ -9,7 +9,7 @@ module "lambda-function" {
    environment  = module.dev_vpc_1.environment
    subnet_ids  = module.dev_vpc_1.private_subnets_id
    security_group_ids = [module.dev_sg_1.sg_id]
-   s3_bucket_name = "lambda-bucket"
+   s3_bucket_name = "excelra-0-9-lambda-bucket"
    s3_object_key = "lambda_function.zip"
    s3_bucket_arn = "s3_bucket_arn"
    vpc_name     = module.dev_vpc_1.vpc_name
